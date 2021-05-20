@@ -1,0 +1,30 @@
+<html>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href=""><b>Sistema Inventarios </b>Farmacia</a>
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Inicio de sesión</p>
+    <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+      <div class="alert alert-danger" [hidden]="!error">
+        {{error}}
+      </div>
+      <div class="form-group has-feedback">
+        <label for="userName">Nombre de Usuario</label><input type="text" name="userName" [(ngModel)]="form.username" id="userName" class="form-control" placeholder="Nombre de Usuario" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <label for="password">Contraseña</label><input type="password" name="password" [(ngModel)]="form.password" id="password" class="form-control" placeholder="Contraseña" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <button type="submit" name="login" class="btn btn-primary btn-block btn-flat" [disabled]="!loginForm.valid">Entrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
