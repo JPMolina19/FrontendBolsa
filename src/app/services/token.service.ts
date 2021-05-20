@@ -9,16 +9,15 @@ import * as CryptoJS from 'crypto-js';
 export class TokenService {
 
   public url: string;
-  protected readonly CRYPTO_KEY = 'crypto_key_SIF';
+  protected readonly CRYPTO_KEY = 'candidatos_key';
   protected readonly USER_KEY = 'user';
-  protected readonly SUCURSAL_KEY = 'suc';
   protected readonly TOKEN_KEY = 'token';
 
   constructor() {
     this.url = GLOBAL.url;
   }
 
-  handleToken(token): void {
+  handleToken(token: string): void {
     this.setToken(token);
   }
 
@@ -33,15 +32,15 @@ export class TokenService {
       const a = CryptoJS.AES.decrypt(aux, this.CRYPTO_KEY);
       return JSON.parse(a.toString(CryptoJS.enc.Utf8));
     }
-    return new User('', '', '', '');
+    return new User('', '', '', 0);
   }
 
-  setToken(token): void {
+  setToken(token: string): void {
     localStorage.setItem(this.TOKEN_KEY, token);
   }
 
   getToken(): string {
-    return localStorage.getItem(this.TOKEN_KEY);
+    return localStorage.getItem(this.TOKEN_KEY) ?? '';
   }
 
   removeToken(): void {
@@ -55,8 +54,8 @@ export class TokenService {
       if (payload) {
         return payload.iss === (this.url + 'auth/login');
       }
-
     }
+    return false;
   }
 
   private payload(token: string): any {

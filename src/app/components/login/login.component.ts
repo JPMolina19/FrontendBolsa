@@ -14,8 +14,8 @@ import {AuthService} from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   public form = {
-    username: null,
-    password: null
+    username: '',
+    password: ''
   };
   public user: User;
   public error: string | undefined;

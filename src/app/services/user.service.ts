@@ -22,12 +22,12 @@ export class UserService {
   login(user: User): Observable<any> {
     const json = JSON.stringify(user);
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(this.url + 'auth/login', json, {headers});
+    return this.http.post(this.url + 'authcandidatos/login', json, {headers});
   }
 
   userData(): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.token.getToken()).set('Content-Type', 'application/json');
-    return this.http.get(this.url + 'auth/user', {headers});
+    return this.http.get(this.url + 'authcandidatos/user', {headers});
   }
 
 }
