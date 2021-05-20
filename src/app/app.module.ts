@@ -4,6 +4,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {FormsModule} from "@angular/forms";
+import {EncrDecrService} from "./services/EncrDecrService";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EncrDecrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
