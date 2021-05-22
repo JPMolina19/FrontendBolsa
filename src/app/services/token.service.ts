@@ -52,7 +52,7 @@ export class TokenService {
     if (token) {
       const payload = this.payload(token);
       if (payload) {
-        return payload.iss === (this.url + 'auth/login');
+        return payload.iss === (this.url + 'authcandidatos/login');
       }
     }
     return false;
