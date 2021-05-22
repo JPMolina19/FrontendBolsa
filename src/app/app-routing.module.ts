@@ -14,6 +14,9 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AfterLoginService]},
   // selección de grupo (estudiantes, graduados)
   {path: 'grupo/:id', component: SelectGrupoComponent, canActivate: [AfterLoginService]},
+  // listado de perfiles
+  {path: 'listagraduados', component: SelectGrupoComponent, canActivate: [AfterLoginService]},
+  {path: 'listaalumnos', component: SelectGrupoComponent, canActivate: [AfterLoginService]},
 
 ]
 

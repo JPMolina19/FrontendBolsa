@@ -9,6 +9,9 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SelectGrupoComponent } from './components/select-grupo/select-grupo.component';
+import { ListadoGraduadoComponent } from './components/listado-graduado/listado-graduado.component';
+import { GraduadoViewComponent } from './components/graduado-view/graduado-view.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { SelectGrupoComponent } from './components/select-grupo/select-grupo.com
     HomeComponent,
     NavbarComponent,
     SelectGrupoComponent,
+    ListadoGraduadoComponent,
+    GraduadoViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [EncrDecrService],
   bootstrap: [AppComponent]
