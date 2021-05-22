@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SelectGrupoComponent } from './components/select-grupo/select-grupo.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
+    SelectGrupoComponent,
   ],
   imports: [
     BrowserModule,

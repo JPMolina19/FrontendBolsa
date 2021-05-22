@@ -1,1 +1,10 @@
-<p>home works!</p>
+<div class="row">
+  <div class="col mb-2" *ngFor="let carrera of carreras">
+    <div class="card border-primary" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{carrera.nombre_carrera}}</h5>
+        <a routerLink="/grupo/{{carrera.id_carrera}}" class="card-link stretched-link">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>
