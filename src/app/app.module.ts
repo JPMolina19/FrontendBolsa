@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {EncrDecrService} from "./services/EncrDecrService";
 import { HomeComponent } from './components/home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
@@ -12,6 +12,7 @@ import { SelectGrupoComponent } from './components/select-grupo/select-grupo.com
 import { ListadoGraduadoComponent } from './components/listado-graduado/listado-graduado.component';
 import { GraduadoViewComponent } from './components/graduado-view/graduado-view.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { ListadoAlumnoComponent } from './components/listado-alumno/listado-alumno.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import {NgxPaginationModule} from "ngx-pagination";
     SelectGrupoComponent,
     ListadoGraduadoComponent,
     GraduadoViewComponent,
+    ListadoAlumnoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
   ],

@@ -22,9 +22,9 @@ export class SelectGrupoComponent implements OnInit {
   onGrupoSelected(grupo: string): void {
     console.log('Seleccionado carrera: ' + this.idCarrera + ', y grupo: ' + grupo);
     if (grupo == 'graduados' ){
-
+      this.router.navigate(['/listagraduados/'+this.idCarrera])
     }if (grupo == 'estudiantes'){
-      console.log('estudiantes bien')
+      this.router.navigate(['/listaalumnos/'+this.idCarrera])
     }
   }
 

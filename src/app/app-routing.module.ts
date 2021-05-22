@@ -5,6 +5,8 @@ import {BeforeLoginService} from "./services/before-login.service";
 import {HomeComponent} from "./components/home/home.component";
 import {AfterLoginService} from "./services/after-login.service";
 import {SelectGrupoComponent} from "./components/select-grupo/select-grupo.component";
+import {ListadoGraduadoComponent} from "./components/listado-graduado/listado-graduado.component";
+import {ListadoAlumnoComponent} from "./components/listado-alumno/listado-alumno.component";
 
 const routes: Routes = [
   //inicio
@@ -15,8 +17,8 @@ const routes: Routes = [
   // selección de grupo (estudiantes, graduados)
   {path: 'grupo/:id', component: SelectGrupoComponent, canActivate: [AfterLoginService]},
   // listado de perfiles
-  {path: 'listagraduados', component: SelectGrupoComponent, canActivate: [AfterLoginService]},
-  {path: 'listaalumnos', component: SelectGrupoComponent, canActivate: [AfterLoginService]},
+  {path: 'listagraduados/:id', component: ListadoGraduadoComponent, canActivate: [AfterLoginService]},
+  {path: 'listaalumnos/:id', component: ListadoAlumnoComponent, canActivate: [AfterLoginService]},
 
 ]
 

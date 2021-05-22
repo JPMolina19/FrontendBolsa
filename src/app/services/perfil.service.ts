@@ -18,14 +18,14 @@ export class PerfilService {
     this.url = GLOBAL.url;
   }
 
-  getGraduados(): Observable<any> {
+  getGraduados(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.token.getToken()).set('Content-Type', 'application/json');
-    return this.http.get(this.url + 'graduados', {headers});
+    return this.http.get(this.url + 'candidatos/graduados/' + id, {headers});
   }
 
-  getAlumnos(): Observable<any> {
+  getAlumnos(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.token.getToken()).set('Content-Type', 'application/json');
-    return this.http.get(this.url + 'alumnos', {headers});
+    return this.http.get(this.url + 'candidatos/alumnos/' + id, {headers});
   }
 
 }

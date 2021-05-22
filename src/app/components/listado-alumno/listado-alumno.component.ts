@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {Graduado} from "../../models/graduado";
+import {ActivatedRoute, Router} from "@angular/router";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {AuthService} from "../../services/auth.service";
 import {TokenService} from "../../services/token.service";
 import {FormBuilder} from "@angular/forms";
 import {PerfilService} from "../../services/perfil.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Alumno} from "../../models/alumno";
 import {GraduadoViewComponent} from "../graduado-view/graduado-view.component";
+import {Graduado} from "../../models/graduado";
 
 @Component({
-  selector: 'app-listado-graduado',
-  templateUrl: './listado-graduado.component.html',
-  styleUrls: ['./listado-graduado.component.css']
+  selector: 'app-listado-alumno',
+  templateUrl: './listado-alumno.component.html',
+  styleUrls: ['./listado-alumno.component.css']
 })
-export class ListadoGraduadoComponent implements OnInit {
+export class ListadoAlumnoComponent implements OnInit {
 
   public title: string;
-  public graduado: Array<Graduado>;
-  public filGraduado: Array<Graduado> ;
+  public alumno: Array<Alumno>;
+  public filAlumno: Array<Alumno> ;
   public total: number;
   public page = 1;
   public itemsPerPage = 10;
@@ -30,23 +31,23 @@ export class ListadoGraduadoComponent implements OnInit {
     private auth: AuthService,
     private token: TokenService,
     private formBuilder: FormBuilder,
-    private graduadoService: PerfilService,
+    private alumnoService: PerfilService,
     private activatedRoute: ActivatedRoute,
   ) {
-    this.title = 'Lista Graduados';
-    this.filGraduado =[];
-    this.graduado = [];
+    this.title = 'Lista Alumnos';
+    this.filAlumno =[];
+    this.alumno = [];
     this.total = 0
   }
 
   ngOnInit(): void {
     this.idCarrera = this.activatedRoute.snapshot.paramMap.get('id');
     console.log('Carrera: ' + this.idCarrera);
-    this.graduadoService.getGraduados(this.idCarrera).subscribe(
+    this.alumnoService.getAlumnos(this.idCarrera).subscribe(
       response => {
-        this.graduado = response;
-        this.filGraduado = this.graduado;
-        this.total = this.filGraduado.length;
+        this.alumno = response;
+        this.filAlumno = this.alumno;
+        this.total = this.filAlumno.length;
       }, error => {
         if (error.status === 401) {
           this.token.removeToken();
@@ -59,9 +60,9 @@ export class ListadoGraduadoComponent implements OnInit {
     );
   }
 
-  verGraduado(grad: Graduado) {
+  verAlumno(alum: Alumno) {
     const modalRef = this.modalService.open(GraduadoViewComponent, {centered: true});
-    modalRef.componentInstance.proveedor = grad;
+    modalRef.componentInstance.proveedor = alum;
   }
 
 }

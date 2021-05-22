@@ -34,7 +34,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4>Graduados</h4>
+              <h4>Estudiantes</h4>
             </div>
             <div class="card-body table-responsive p-0" style="height: 400px;">
               <table class="table table-head-fixed table-sm">
@@ -48,23 +48,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let grad of filGraduado | paginate: { id: 'listing_pagination',
+                <tr *ngFor="let alum of filAlumno | paginate: { id: 'listing_pagination',
                  itemsPerPage: itemsPerPage, currentPage: page, totalItems: total}; let i = index">
                   <td>{{i + 1}}</td>
-                  <td>{{grad.nickname}}</td>
-                  <td><i class="fas fa-phone mr-2"></i>{{grad.id}}<BR>
+                  <td>{{alum.nickname}}</td>
+                  <td><i class="fas fa-phone mr-2"></i>{{alum.id}}<BR>
                   </td>
-                  <td><i *ngIf="grad.status" class="fas fa-envelope mr-2"></i>{{grad.status}}</td>
+                  <td><i *ngIf="alum.status" class="fas fa-envelope mr-2"></i>{{alum.status}}</td>
                   <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default">Acciones</button>
-                      <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                        <span class="sr-only">Toggle Dropdown</span>
-                        <div class="dropdown-menu" role="menu">
-                          <a class="dropdown-item" (click)="verGraduado(grad)"> <i class="fas fa-eye mr-1"></i> Ver</a>
-                        </div>
-                      </button>
-                    </div>
+                      <button type="button" class="btn btn-default">Ver Perfil</button>
                   </td>
                 </tr>
                 </tbody>
