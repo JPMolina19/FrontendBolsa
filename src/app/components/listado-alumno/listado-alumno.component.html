@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" style="max-height: 100vw">
   <section class="content-header">
     <div class="container-fluid">
       <div class="row">
@@ -39,16 +39,16 @@
             <div class="card-body table-responsive p-0" style="height: 400px;">
               <table class="table table-head-fixed table-sm">
                 <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Nombre</th>
-                  <th>ID</th>
-                  <th>Estatus</th>
-                  <th></th>
+                <tr style="text-align: center">
+                  <th> Foto </th>
+                  <th> Nombre </th>
+                  <th> Formación Complementaria </th>
+                  <th> Destrezas </th>
+                  <th> Ver Perfil </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let alum of filAlumno | paginate: { id: 'listing_pagination',
+                <tr style="text-align: center" *ngFor="let alum of filAlumno | paginate: { id: 'listing_pagination',
                  itemsPerPage: itemsPerPage, currentPage: page, totalItems: total}; let i = index">
                   <td>{{i + 1}}</td>
                   <td>{{alum.nickname}}</td>
