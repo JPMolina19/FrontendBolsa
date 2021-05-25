@@ -1,12 +1,15 @@
 /* Made with love by Mutiullah Samim*/
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
-body{
-  max-height: 100%;
-
-  background: #60a3bc;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: #60a3bc !important;
 }
-
 .user_card {
   height: 400px;
   width: 350px;
@@ -35,8 +38,8 @@ body{
   text-align: center;
 }
 .brand_logo {
-  height: 150px;
-  width: 150px;
+  height: 157px;
+  width: 153px;
   border-radius: 50%;
   border: 2px solid white;
 }

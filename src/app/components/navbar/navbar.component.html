@@ -1,25 +1,19 @@
 <header  *ngIf="loggedIn" >
-  <!-- Left navbar links -->
-  <!-- Image and text -->
-  <nav class="navbar navbar-light bg-light " style="margin-bottom: 30px">
-    <a class="navbar-brand" href="#">
-      <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-      Jams
-    </a>
-      <a href="" class="nav-link ">
-        <span class="fas fa-user-circle">
-        Home</span>
-      </a>
-    <a href="" class="nav-link ">
-        <span class="fas fa-user-circle">
-        Perfiles Guardados</span>
-    </a>
-      <a href="#" class="nav-link" (click)="logOut($event)">
-        <span class="fas fa-sign-out-alt">
-        Cerrar Sesión</span>
-      </a>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img src="https://www.w3schools.com/howto/img_avatar2.png" width="40" height="40" class="d-inline-block align-top" style="border-radius: 50%" alt="Avatar">
+        <a class="navbar-brand" href="#" style="margin-left: 10px">  Jams</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <a href="#" class="nav-link" style="color: white"><span class="glyphicon glyphicon-user"></span> Home</a>
+      </ul>
+      <a href="#" class="nav-link navbar-nav" style="color: white"><span class="glyphicon glyphicon-user"></span> Perfiles Guardados</a>
+      <a href="#" class="nav-link navbar-nav" style="color: white" (click)="logOut($event)">
+      <span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a>
+    </div>
   </nav>
 
-  <!-- Right navbar links -->
-
 </header>
+

@@ -3,5 +3,6 @@ export class Carrera {
     public id_carrera: number,
     public nombre_carrera: string = '',
     public sigla: string = '',
+    public logo: string = '',
   ){}
 }
