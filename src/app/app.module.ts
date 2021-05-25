@@ -13,6 +13,7 @@ import { ListadoGraduadoComponent } from './components/listado-graduado/listado-
 import { GraduadoViewComponent } from './components/graduado-view/graduado-view.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { ListadoAlumnoComponent } from './components/listado-alumno/listado-alumno.component';
+import { CarrerasPipe } from './pipes/carreras.pipe';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import { ListadoAlumnoComponent } from './components/listado-alumno/listado-alum
     ListadoGraduadoComponent,
     GraduadoViewComponent,
     ListadoAlumnoComponent,
+    CarrerasPipe,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,

@@ -1,17 +1,25 @@
-<div class="row" style="margin-left: 20px; margin-right: 20px">
-  <div class="col mb-5" *ngFor="let carrera of carreras">
-    <div class="card border-primary" style="width: 20rem; height: 100px">
-      <div class="card-body">
-        <h5 class="card-title">{{carrera.nombre_carrera}}</h5>
-        <a routerLink="/grupo/{{carrera.id_carrera}}" class="card-link stretched-link">Seleccionar</a>
-      </div>
+<div class="container">
+  <div class="form-group row mb-2">
+    <label for="search" class="col-sm-2 col-form-label">Buscar carrera: </label>
+    <div class="col-sm-10">
+      <input id="search" type="text" class="form-control" placeholder="Buscar" aria-label="Carrera a Buscar" [(ngModel)]="query">
     </div>
   </div>
-  <div class="col mb-5" *ngFor="let carrera of carreras">
-    <div class="card border-primary" style="width: 20rem; height: 100px">
-      <div class="card-body">
-        <h5 class="card-title">{{carrera.nombre_carrera}}</h5>
-        <a routerLink="/grupo/{{carrera.id_carrera}}" class="card-link stretched-link">Seleccionar</a>
+  <div class="row" style="margin-left: 20px; margin-right: 20px">
+    <div class="col mb-5" *ngFor="let carrera of carreras | carreras : query">
+      <div class="card border-primary" style="width: 20rem; height: 100px">
+        <div class="card-body">
+          <h5 class="card-title">{{carrera.nombre_carrera}}</h5>
+          <a routerLink="/grupo/{{carrera.id_carrera}}" class="card-link stretched-link">Seleccionar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-5" *ngFor="let carrera of carreras | carreras : query">
+      <div class="card border-primary" style="width: 20rem; height: 100px">
+        <div class="card-body">
+          <h5 class="card-title">{{carrera.nombre_carrera}}</h5>
+          <a routerLink="/grupo/{{carrera.id_carrera}}" class="card-link stretched-link">Seleccionar</a>
+        </div>
       </div>
     </div>
   </div>

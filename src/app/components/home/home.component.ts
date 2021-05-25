@@ -13,6 +13,7 @@ import {Carrera} from "../../models/carrera";
 export class HomeComponent implements OnInit {
 
   public carreras: Array<Carrera> = [];
+  public query: string = '';
 
   constructor(
     private router: Router,
